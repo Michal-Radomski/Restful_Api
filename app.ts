@@ -4,8 +4,8 @@ require("dotenv").config();
 import express from "express";
 import mongoose from "mongoose";
 
+// DB Connection
 mongoose.connect("mongodb://localhost:27017/test", {useNewUrlParser: true, useUnifiedTopology: true});
-
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection error:"));
 db.once("open", function callback() {
@@ -13,6 +13,11 @@ db.once("open", function callback() {
 });
 
 const app = express();
+
+// Configuring routes
+const allRoutes = require("./routes/routes");
+// console.log({allRoutes});
+app.use(allRoutes);
 
 const port = (process.env.PORT || 3000) as number;
 
