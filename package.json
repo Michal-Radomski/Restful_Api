@@ -4,7 +4,7 @@
   "description": "Files created during this Udemy.com course:",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.ts"
+    "dev": "clear && nodemon app.ts"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,8 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.4.0",
+    "mongodb": "^4.7.0",
+    "mongoose": "5.13.14",
     "nodemon": "^2.0.16"
   },
   "devDependencies": {
